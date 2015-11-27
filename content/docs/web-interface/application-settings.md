@@ -18,15 +18,6 @@ permissions of teams. The owners team of an organization always has `admin` acce
 [Read more on roles and permissions &rsaquo;](/docs/web-interface/roles-and-permissions.html)
 
 
-### Support
-
-When you are in need of support, you can hit the support switch and send us a message via
-the UserVoice pop-up.
-
-By activating wercker support you give the wercker team `builds + deploys` permissions.
-This allows us to see the details and debug the issue at hand.
-
-
 ### Deploy targets
 
 Here you can setup deploy pipeline targets. Want read more on deploying
@@ -56,10 +47,47 @@ Want to read more on `SSH Keys`, continue reading the following link.
 [Read more on SSH keys &rsaquo;](/docs/ssh-keys/index.html)
 
 
-### Admin
+### Options
 
 This is a grouped section of settings. Here you can adjust the following
 settings:
+
+
+### Support
+
+When you are in need of support, you can hit the support switch and send us a message via
+the UserVoice pop-up.
+
+By activating wercker support you give the wercker team `builds + deploys` permissions.
+This allows us to see the details and debug the issue at hand.
+
+
+#### Clear cache
+
+Here you can clear the `$WECKER_CACHE_DIR`. Want to read more on how to use the
+wercker cache directory, continue reading the following link.
+
+[Read more on wercker cache &rsaquo;](/docs/pipelines/wercker-cache.html)
+
+
+#### Webhook
+
+When wercker is not picking up your commits or wercker shows a `broken webhook` warning,
+you can hit the 'Fix webhook' button. Note that you need to be an
+`admin` on your repository in order to fix the webhook.
+
+[Read more on webhooks &rsaquo;](/docs/faq/how-do-webhooks-work.html)
+
+
+#### Repository access
+
+Here you can update the settings how we checkout your code.
+For instance, if your builds fail during the `get code` step, you may need to reset
+the key used to check out the code or in the case of a public application, you may want to
+configure your application to be checked without an SSH key.
+
+[Read more on repository access &rsaquo;](/docs/web-interface/repository-access.html)
+
 
 #### Public / private
 
@@ -71,29 +99,15 @@ If you are creating a wercker `pipeline step` your application needs to be publi
 Your published `pipeline step` will gain an extra page with details.
 
 
-#### Clear cache
+#### Ignored branches
 
-Here you can clear the `$WECKER_CACHE_DIR`. Want to read more on how to use the
-wercker cache directory, continue reading the following link.
+Here you can set which for which branchname wercker should **not** trigger a build.
+It supports a maximum of 10 branchnames, and each branchname should be separated
+with a **space**.
 
-[Read more on wercker cache &rsaquo;](/docs/pipelines/wercker-cache.html)
-
-#### Repository access
-
-Here you can update the settings how we checkout your code.
-For instance, if your builds fail during the `get code` step, you may need to reset
-the key used to check out the code or in the case of a public application, you may want to
-configure your application to be checked without an SSH key.
-
-[Read more on repository access &rsaquo;](/docs/web-interface/repository-access.html)
-
-#### Webhook
-
-When wercker is not picking up your commits or wercker shows a `broken webhook` warning,
-you can hit the 'Fix webhook' button. Note that you need to be an
-`admin` on your repository in order to fix the webhook.
-
-[Read more on webhooks &rsaquo;](/docs/faq/how-do-webhooks-work.html)
+By default all applications with a GitHub repository have already one branchname
+prefilled, the branchname `gh-pages` is ignored for users who deploy to Github pages.
+If you don't make use of GitHub pages you can remove or ignore this setting.
 
 #### Infrastructure stack
 
